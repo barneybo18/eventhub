@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "EventHub",
   description: "EventHub is a Platform for event management.",
   icons:{
-    icon:'./assets/images/logo.svg'
+    icon:'./assets/images/favicon.png'
   }
 };
 

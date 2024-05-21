@@ -10,11 +10,11 @@ const Header = () => {
   return (
     <header className='w-full border-b'>
       <div className='wrapper flex items-center justify-between'>
-        <Link href={"/"} className='w-36'>
+        <Link href={"/"} className='w-48'>
           <Image 
-            src='/assets/images/logo.svg'
-            width={128}
-            height={38}
+            src='/assets/images/event_hub.svg'
+            width={190}
+            height={50}
             alt='EventHub logo'
           />
         </Link>
@@ -31,7 +31,7 @@ const Header = () => {
             <MobileNav />
           </SignedIn>
           <SignedOut>
-            <Button asChild className='rounded-full' size="lg">
+            <Button asChild className='rounded-full bg-[#B675B2] hover:bg-[#944d90]' size="lg">
               <Link href="/sign-in">
                 Login
               </Link>
