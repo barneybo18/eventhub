@@ -15,7 +15,7 @@ const EventDetails = async ({params: { id }, searchParams}: SearchParamProps) =>
     page: searchParams.page as string,
   })
 
-  console.log(event)
+  // console.log(event)
   return (
     <>
     <section className='flex justify-center bg-primary-50 bg-dotted-pattern bg-contain'>
@@ -34,7 +34,7 @@ const EventDetails = async ({params: { id }, searchParams}: SearchParamProps) =>
             <div className='flex flex-col gap-3 sm:flex-row sm:items-center'>
               <div className='flex gap-3'>
                 <p className='p-bold-20 rounded-full bg-green-500/10 px-5 py-2 text-green-700'>
-                  {event.isFree ? 'FREE' : `$${event.price}`}
+                  {event.isFree ? 'FREE' : `₦${event.price}`}
                 </p>
                 <p className='p-medium-16 rounded-full bg-grey-500/10 px-4 py-2.5 text-grey-500'>
                   {event.category.name}
@@ -92,9 +92,9 @@ const EventDetails = async ({params: { id }, searchParams}: SearchParamProps) =>
           emptyTitle="No Events Found"
           emptyStateSubtext="Come Back Later"
           collectionType="All_Events"
-          limit={6}
-          page={1}
-          totalPages={2}
+          limit={3}
+          page={searchParams.page as string}
+          totalPages={relatedEvent?.totalPages}
         />
     </section>
     </>
