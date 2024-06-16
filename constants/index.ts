@@ -3,13 +3,29 @@ export const headerLinks = [
     label: 'Home',
     route: '/',
   },
-  {
-    label: 'Create Event',
-    route: '/events/create',
-  },
+  // {
+  //   label: 'Create Event',
+  //   route: '/events/create',
+  // },
   {
     label: 'My Profile',
     route: '/profile',
+  },
+  {
+    label: 'Host an Event?',
+    route: '/contact',
+  }
+]
+
+export const adminHeaderLinks = [
+  {
+    label: 'Dashboard',
+    route: '/admin',
+  },
+   
+  {
+    label: 'Create Event',
+    route: '/events/create',
   },
 ]
 
