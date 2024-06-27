@@ -1,10 +1,10 @@
-import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { OrganizationSwitcher, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Button } from '../ui/button'
-import MobileNav from './MobileNav'
 import AdminNavItems from './AdminNavItems'
+import AdminMobileNav from './AdminMobileNav'
 
 const AdminHeader = () => {
   return (
@@ -28,7 +28,7 @@ const AdminHeader = () => {
         <div className='flex w-32 justify-end gap-3'>
           <SignedIn>
             <UserButton afterSignOutUrl='/' />
-            <MobileNav />
+            <AdminMobileNav />
           </SignedIn>
           <SignedOut>
             <Button asChild className='rounded-full bg-[#B675B2] hover:bg-[#944d90]' size="lg">

@@ -63,10 +63,10 @@ export const createOrder = async (order: CreateOrderParams) => {
 // GET ORDERS BY EVENT
 export async function getOrdersByEvent({ searchString, eventId }: GetOrdersByEventParams) {
   try {
-    await connectToDatabase()
+    await connectToDatabase();
 
-    if (!eventId) throw new Error('Event ID is required')
-    const eventObjectId = new ObjectId(eventId)
+    if (!eventId) throw new Error('Event ID is required');
+    const eventObjectId = new ObjectId(eventId);
 
     const orders = await Order.aggregate([
       {
@@ -101,18 +101,22 @@ export async function getOrdersByEvent({ searchString, eventId }: GetOrdersByEve
           buyer: {
             $concat: ['$buyer.firstName', ' ', '$buyer.lastName'],
           },
+          email: '$buyer.email', // Add email to the projection
         },
       },
       {
         $match: {
-          $and: [{ eventId: eventObjectId }, { buyer: { $regex: RegExp(searchString, 'i') } }],
+          $and: [
+            { eventId: eventObjectId },
+            { buyer: { $regex: RegExp(searchString, 'i') } },
+          ],
         },
       },
-    ])
+    ]);
 
-    return JSON.parse(JSON.stringify(orders))
+    return JSON.parse(JSON.stringify(orders));
   } catch (error) {
-    handleError(error)
+    handleError(error);
   }
 }
 
