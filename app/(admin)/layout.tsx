@@ -11,7 +11,7 @@ export default function AdminLayout({
   return (
    <Protect
     permission ='org:create:permission'
-    fallback={<p>You do not have access to this page. <a href="/">Go Home</a></p>}
+    fallback={<p>You do not have access to this page. <a href="/" className="underline text-primary-500">Go Home</a></p>}
   >
     <div className="flex h-screen flex-col">
       <AdminHeader />
